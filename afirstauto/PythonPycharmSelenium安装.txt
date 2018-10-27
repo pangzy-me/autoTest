@@ -1,0 +1,68 @@
+
+1.安装Python 3.x(版本3.6，安装过程中勾选配置环境变量及安装pip工具)
+  pip是一个安装和管理Python包的工具，可以用这个工具安装selenium.
+https://www.python.org/downloads/
+
+2.安装pycharm(python集成开发环境。推荐社区版本Community，免费)
+http://www.jetbrains.com/pycharm/download/#section=windows
+(创建项目的时候，要设置Project Interpreter 。点击setting，就可以设置Project Interpreter，建议设置成本地的，否则后期会报错！)
+
+3.1 安装selenium，离线安装包方式
+https://pypi.python.org/pypi/selenium#downloads
+a.解压压缩包至Python\Lib\site-packages\路径下
+b.进入selenium文件夹内，执行命令安装
+	D:\Program Files\Python\Lib\site-packages\selenium-3.8.0> python setup.py install
+安装完成后，该路径下会生成 selenium-3.8.0-py3.6.egg 文件夹，包含EGG-INFO、selenium 两个子文件夹
+
+3.2 亦可使用在线安装selenium(功能等同于3.1)
+a.因为第1步中已经安装了pip文件，在Python安装目录，执行命令安装即可。
+  如果失败的话，path中试着增加环境变量 D:\Program Files\Python\Scripts;
+pip install -U selenium
+pip show selenium
+pip uninstall selenium
+注：若没安装pip，需先安装。
+	参见文档：
+		http://blog.csdn.net/u012395793/article/details/71208359
+		http://www.makaidong.com/博客园的/31277.shtml
+	a1.在官网（https://pypi.python.org/pypi/setuptools）上下载setuptools进行下载解压安装即可
+	a2.path中增加环境变量 D:\Program Files\Python\Scripts;
+	a3.打开cmd，在Python安装目录下，输入 easy_install pip
+	a4.在Python安装目录，执行命令安装 pip install -U selenium
+
+4.下载所需浏览器的webdriver(需根据chrome版本下载对应的webdriver。所用chrome版本 56.x，ChromeDriver 版本 2.27)
+	https://sites.google.com/a/chromium.org/chromedriver/downloads 用chrome浏览器，安装谷歌访问助手插件访问
+ 解压后，将chromedriver.exe文件放到Python的安装目录下 D:\Program Files\Python\chromedriver.exe
+
+ 另附IE、Firefox浏览器webdriver
+   IE的驱动IEdriver 下载地址：http://www.nuget.org/packages/Selenium.WebDriver.IEDriver/
+   Firefox的驱动geckodriver 下载地址：https://github.com/mozilla/geckodriver/releases/
+
+5.启动pycharm，新建Project后，在新添加的 xx.py文件中添加测试脚本，执行即可。
+from selenium import  webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+driver.get("http://www.baidu.com")
+
+其中注意：
+a.执行过程可能会报如下错
+E:\Python_Test\autoTest\venv\Scripts\python.exe E:/Python_Test/autotest/test.py
+Traceback (most recent call last):
+  File "E:/Python_Test/autotest/test.py", line 1, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
+解决方法：
+报错原因是因为虚拟环境里面[E:\Python_Test\autoTest\venv\Scripts\python.exe]没有安装selenium
+新建项目时，project interpreter: ，选择本地的Existing Interpreter，不用虚拟环境里面的 New Environment Using-virtualenv。
+本地的Existing Interpreter 路径：D:\Program Files\Python\python.exe
+
+b.如果能打开浏览器，但是地址栏只显示“data”，很可能是因为下载的chromedriver.exe与Chrome浏览器版本不相符，
+问题解决参考文档 http://blog.csdn.net/qijingpei/article/details/68925392 
+ 
+ 
+参考网络资料：
+http://blog.csdn.net/azsx02/article/details/68947429
+http://blog.csdn.net/u012395793/article/details/71208359
+http://blog.csdn.net/u012395793/article/details/71208359
+http://www.makaidong.com/博客园的/31277.shtml
+

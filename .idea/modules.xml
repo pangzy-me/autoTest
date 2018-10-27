@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/autoTest.iml" filepath="$PROJECT_DIR$/.idea/autoTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../modules/.idea/modules.iml" filepath="$PROJECT_DIR$/../modules/.idea/modules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pythonBase/.idea/pythonBase.iml" filepath="$PROJECT_DIR$/../pythonBase/.idea/pythonBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../selenium/.idea/selenium.iml" filepath="$PROJECT_DIR$/../selenium/.idea/selenium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../webAPI/.idea/webAPI.iml" filepath="$PROJECT_DIR$/../webAPI/.idea/webAPI.iml" />
+    </modules>
+  </component>
+</project>
